@@ -75,7 +75,7 @@ li {
 const RedCircle = styled.div`
 position: absolute;
 
-top: 199px;
+top: 169px;
 width: 12px;
 height: 12px;
 border-radius: 100px;
@@ -152,7 +152,7 @@ export default function HomePage() {
         <SideBarContainer>
             <div Style="padding-top: 40px;
                         padding-left: 30px;
-                        padding-bottom: 40px;">
+                        padding-bottom: 10px;">
                 <img src={Title} alt="" />
             </div>
 
@@ -165,7 +165,7 @@ export default function HomePage() {
                 <li> <img src={Neptune} alt="" /> More</li>
             </ul>
 
-            <div Style="margin-top: 150px;
+            <div Style="margin-top: 50px;
                         margin-left: 40px;">
                 <img src={Twitter} alt='' />
                 <img src={Telegram} alt='' />
