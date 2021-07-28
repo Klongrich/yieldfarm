@@ -27,7 +27,7 @@ const AstranautContainer = styled.div`
 position: absolute;
 width: 243.85px;
 height: 253.94px;
-margin-left: 70%;
+margin-left: 80%;
 margin-top: 1%;
 
 transform: rotate(10.16deg);
@@ -37,7 +37,7 @@ const SideBarContainer = styled.div`
 background-color: #242249;
 float: left;
 height: 100%;
-width: 17%;
+width: 21%;
 
 img {
     margin-top: 10px;
@@ -59,9 +59,11 @@ li {
     text-align: left;
     color: #6F6C99;
 
-    padding-top: 20px;
+    padding-top: 0px;
     padding-bottom: 20px;
-    margin-right: 20px;
+    margin-right: 0px;
+
+    line-height: 2;
 
     :hover {
         cursor: pointer;
@@ -73,7 +75,7 @@ li {
 const RedCircle = styled.div`
 position: absolute;
 
-top: 185px;
+top: 199px;
 width: 12px;
 height: 12px;
 border-radius: 100px;
@@ -150,12 +152,12 @@ export default function HomePage() {
         <SideBarContainer>
             <div Style="padding-top: 40px;
                         padding-left: 30px;
-                        padding-bottom: 10px;">
+                        padding-bottom: 40px;">
                 <img src={Title} alt="" />
             </div>
 
             <ul>
-                <li> <img src={Saturn} alt="" /> Home</li>
+                <li Style="color:#E14CAE;"> <img src={Saturn} alt="" /> Home</li>
                 <li> <img src={Tractor} alt="" /> Trade</li>
                 <li> <img src={Sprout} alt="" />Farms</li>
                 <li> <img src={Spaceship} alt="" />Pools</li>
