@@ -40,7 +40,6 @@ height: 100%;
 width: 17%;
 
 img {
-    margin-left: 20px;
     margin-top: 10px;
     padding-right: 10px;
 }
@@ -62,6 +61,7 @@ li {
 
     padding-top: 20px;
     padding-bottom: 20px;
+    margin-right: 20px;
 
     :hover {
         cursor: pointer;
