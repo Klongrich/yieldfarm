@@ -1,5 +1,9 @@
-import React from 'react';
+import React, {useState} from 'react';
 import styled from "styled-components";
+import Web3 from "web3";
+
+import Web3Modal from 'web3modal';
+import WalletConnectProvider from '@walletconnect/web3-provider';
 
 import Title from "../assests/Logov2.png";
 import TopTitle from "../assests/TopTitle.png";
@@ -18,6 +22,22 @@ import Stats from "../assests/stats.png";
 import Neptune from "../assests/neptune.png";
 
 import Home from "../components/homepage";
+
+const providerOptions = {
+    walletconnect: {
+      package: WalletConnectProvider, // required
+      options: {
+        infuraId: '43b86485d3164682b5d703fd1d39fe1c' // required. Should move to .env file
+      }
+    }
+}
+
+const web3Modal = new Web3Modal({
+    network: 'rinkeby', // optional
+    cacheProvider: true, // optional
+    providerOptions // required
+});
+
 
 const Container = styled.div`
 height: 1200px;
@@ -156,6 +176,29 @@ h4 {
 
 export default function HomePage() {
 
+    const [walletConnected, setWalletConnected] = useState(false);
+    const [walletAddress, setWalletAddress] = useState("");
+  
+    async function ConnectWeb3Wallet () {
+        const provider = await web3Modal.connect();
+        const web3 = await new Web3(provider);
+
+        const accounts = await web3.eth.getAccounts();
+        const address = { account: accounts[0] }.account;
+
+        setWalletAddress(address)
+        setWalletConnected(true);
+  
+        if (address) {
+          web3.eth.getBalance(address, function (error, wei) {
+            if (!error) {
+              var balance = web3.utils.fromWei(wei, "ether");
+              console.log(balance.substring(0, 4));
+            }
+          });
+        }
+    }
+
     return (
         <>
         <RedCircle /> 
@@ -188,8 +231,9 @@ export default function HomePage() {
         </SideBarContainer>
 
         <div Style="padding-top: 20px;">
-            <ConnectButton>
-                <p> CONNECT </p>
+            <ConnectButton onClick={() => ConnectWeb3Wallet()}>
+                {!walletConnected && <p> CONNECT </p>}
+                {walletConnected && <p> {walletAddress.substring(0, 6)} ... {walletAddress.substring(36, 42)}</p>}
             </ConnectButton>
         </div>
 
