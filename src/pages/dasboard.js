@@ -17,6 +17,8 @@ import Spaceship from "../assests/spaceship.png";
 import Stats from "../assests/stats.png";
 import Neptune from "../assests/neptune.png";
 
+import Home from "../components/homepage";
+
 const Container = styled.div`
 height: 1200px;
 background: url(${BackgroundImage});
@@ -24,13 +26,16 @@ background-repeat: no-repeat;
 
 `
 const AstranautContainer = styled.div`
-position: absolute;
-width: 243.85px;
-height: 253.94px;
+
+width: 203.85px;
+height: 213.94px;
 margin-left: 80%;
-margin-top: 1%;
+margin-top: 3%;
 
 transform: rotate(10.16deg);
+img {
+    z-index: 0;
+}
 `
 
 const SideBarContainer = styled.div`
@@ -118,6 +123,11 @@ p {
 const WelcomeText = styled.div`
 text-align:center;
 color: white;
+margin-top: -285px;
+
+img {
+    margin-top: -27px;
+}
 
 h2 {
     font-family: Montserrat;
@@ -138,6 +148,8 @@ h4 {
     line-height: 19px;
     text-align: center;
     color: #FFFFFF;
+
+    margin-top: 10px;
 }
 
 `
@@ -182,7 +194,7 @@ export default function HomePage() {
         </div>
 
         <AstranautContainer>
-                <img src={Astranaut} alt="" />
+                <img src={Astranaut} alt="" height="170px;" />
         </AstranautContainer>
 
         <WelcomeText>
@@ -190,6 +202,8 @@ export default function HomePage() {
             <img src={TopTitle} alt="" />
             <h4>The #1 AMM and yield farm on Binance Smart Chain.</h4>
         </WelcomeText>
+
+        <Home />
         
         </Container>
         </>
