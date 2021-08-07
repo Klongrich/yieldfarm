@@ -7,6 +7,8 @@ import AnnouncementsIcon from "../assests/AnnouncementsIcon.png";
 import StatsIcon from "../assests/StatsIcon.png";
 import TVLimage from "../assests/tvlImage.png";
 
+import TopTitle from "../assests/TopTitle.png";
+
 const Conatiner = styled.div`
 
 h2 {
@@ -85,10 +87,12 @@ const UnlockButton = styled.div`
 const AnnouncementsBox = styled.div`
     background-color: #242249;
 
-    display: inline-block;
     border-radius: 15px;
-    margin-left: 5%;
-    margin-top: -100px;
+
+    margin-top: -20%;
+    margin-left: 55%;
+
+
     padding-left: 20px;
     padding-bottom: 20px;
 
@@ -140,11 +144,49 @@ const TvlBox = styled.div`
     margin-left: 5%;
     margin-top: -20px;
 `
+const WelcomeText = styled.div`
+text-align:center;
+color: white;
+margin-top: -285px;
+
+img {
+    margin-top: -27px;
+}
+
+h2 {
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 900;
+    font-size: 28px;
+    line-height: 35px;
+    text-align: center;
+    text-transform: uppercase;
+    color: #FFFFFF;
+}
+
+h4 {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 19px;
+    text-align: center;
+    color: #FFFFFF;
+
+    margin-top: 10px;
+}
+`
+
 
 export default function Home() {
 
     return(
         <>
+            <WelcomeText>
+                <h2>WELCOME TO</h2>
+                <img src={TopTitle} alt="" />
+                <h4>The #1 AMM and yield farm on Binance Smart Chain.</h4>
+            </WelcomeText>
             <Conatiner>
                 <FarmBox>
                     <h2>Farms and Staking</h2>

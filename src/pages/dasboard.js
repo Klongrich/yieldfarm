@@ -6,7 +6,6 @@ import Web3Modal from 'web3modal';
 import WalletConnectProvider from '@walletconnect/web3-provider';
 
 import Title from "../assests/Logov2.png";
-import TopTitle from "../assests/TopTitle.png";
 import BackgroundImage from "../assests/bgfarm.png";
 import Astranaut from "../assests/astranaut.png";
 
@@ -21,7 +20,8 @@ import Spaceship from "../assests/spaceship.png";
 import Stats from "../assests/stats.png";
 import Neptune from "../assests/neptune.png";
 
-import Home from "../components/homepage";
+// import Home from "../components/homepage";
+import Exchange from "../components/exchange";
 
 const providerOptions = {
     walletconnect: {
@@ -140,40 +140,6 @@ p {
 }
 `
 
-const WelcomeText = styled.div`
-text-align:center;
-color: white;
-margin-top: -285px;
-
-img {
-    margin-top: -27px;
-}
-
-h2 {
-    font-family: Montserrat;
-    font-style: normal;
-    font-weight: 900;
-    font-size: 28px;
-    line-height: 35px;
-    text-align: center;
-    text-transform: uppercase;
-    color: #FFFFFF;
-}
-
-h4 {
-    font-family: Roboto;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 16px;
-    line-height: 19px;
-    text-align: center;
-    color: #FFFFFF;
-
-    margin-top: 10px;
-}
-
-`
-
 export default function HomePage() {
 
     const [walletConnected, setWalletConnected] = useState(false);
@@ -241,13 +207,8 @@ export default function HomePage() {
                 <img src={Astranaut} alt="" height="170px;" />
         </AstranautContainer>
 
-        <WelcomeText>
-            <h2>WELCOME TO</h2>
-            <img src={TopTitle} alt="" />
-            <h4>The #1 AMM and yield farm on Binance Smart Chain.</h4>
-        </WelcomeText>
-
-        <Home />
+        {/* <Home /> */}
+        <Exchange />
         
         </Container>
         </>
