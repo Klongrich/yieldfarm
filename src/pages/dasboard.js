@@ -20,7 +20,7 @@ import Spaceship from "../assests/spaceship.png";
 import Stats from "../assests/stats.png";
 import Neptune from "../assests/neptune.png";
 
-// import Home from "../components/homepage";
+import Home from "../components/homepage";
 import Exchange from "../components/exchange";
 
 const providerOptions = {
@@ -144,7 +144,8 @@ export default function HomePage() {
 
     const [walletConnected, setWalletConnected] = useState(false);
     const [walletAddress, setWalletAddress] = useState("");
-  
+    const [viewingExchange, setViewingExchange] = useState(false);
+
     async function ConnectWeb3Wallet () {
         const provider = await web3Modal.connect();
         const web3 = await new Web3(provider);
@@ -178,8 +179,8 @@ export default function HomePage() {
             </div>
 
             <ul>
-                <li Style="color:#E14CAE;"> <img src={Saturn} alt="" /> Home</li>
-                <li> <img src={Tractor} alt="" /> Trade</li>
+                <li Style="color:#E14CAE;" onClick={() => setViewingExchange(false)}> <img src={Saturn} alt="" /> Home</li>
+                <li onClick={() => setViewingExchange(true)}> <img src={Tractor} alt="" /> Trade</li>
                 <li> <img src={Sprout} alt="" />Farms</li>
                 <li> <img src={Spaceship} alt="" />Pools</li>
                 <li> <img src={Stats} alt="" />Info and statistics</li>
@@ -207,8 +208,8 @@ export default function HomePage() {
                 <img src={Astranaut} alt="" height="170px;" />
         </AstranautContainer>
 
-        {/* <Home /> */}
-        <Exchange />
+        {!viewingExchange && <Home />}
+        {viewingExchange && <Exchange /> }
         
         </Container>
         </>
