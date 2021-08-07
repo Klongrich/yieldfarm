@@ -40,9 +40,10 @@ const web3Modal = new Web3Modal({
 
 
 const Container = styled.div`
-height: 1200px;
+height: 1600px;
 background: url(${BackgroundImage});
 background-repeat: no-repeat;
+background-size: 100% 1400px;
 
 `
 const AstranautContainer = styled.div`

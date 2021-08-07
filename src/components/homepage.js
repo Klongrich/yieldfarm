@@ -10,17 +10,18 @@ import TVLimage from "../assests/tvlImage.png";
 import TopTitle from "../assests/TopTitle.png";
 
 const Conatiner = styled.div`
+    margin-left: 21%;
 
-h2 {
-    font-family: Montserrat;
-    font-size: 24px;
-    font-style: normal;
-    font-weight: 900;
-    line-height: 29px;
-    letter-spacing: 0em;
-    text-align: left;
-    color: white;
-}
+    h2 {
+        font-family: Montserrat;
+        font-size: 24px;
+        font-style: normal;
+        font-weight: 900;
+        line-height: 29px;
+        letter-spacing: 0em;
+        text-align: left;
+        color: white;
+    }
 
 `
 
@@ -29,13 +30,16 @@ const FarmBox = styled.div`
 
     display: inline-block;
     border-radius: 15px;
-    margin-left: 5%;
-    margin-top: 3%;
-    padding-left: 20px;
-    padding-bottom: 20px;
+    padding-top: 15px;
+
+    padding-left: 50px;
+    padding-bottom: 5px;
     
-    width: 480px;
+    width: 470px;
     height: 380px;
+
+    margin-left: 8%;
+    margin-top: 3%;
 
     h4 {
         color: #6D6CAC;
@@ -86,38 +90,38 @@ const UnlockButton = styled.div`
 
 const AnnouncementsBox = styled.div`
     background-color: #242249;
-
     border-radius: 15px;
-
-    margin-top: -20%;
-    margin-left: 55%;
-
 
     padding-left: 20px;
     padding-bottom: 20px;
 
-    width: 480px;
+    width: 500px;
     height: 380px;
+
+    margin-left: 50%;
+    margin-top: -420px;
 `
 
 const StatsBox = styled.div`
     background-color: #242249;
     display: inline-block;
 
-    margin-top: 5%;
-    margin-left: 5%;
+    margin-top: 1%;
+    margin-left: 8%;
     border-radius: 15px;
-    padding: 20px;
 
-    width: 480px;
+    padding: 10px;
+
+    width: 500px;
+    height:  269px;
 
     ul {
         list-style-type: none;
     }
 
     li {
-        padding-top: 3px;
-        padding-bottom: 3px;
+        padding-top: 1px;
+        padding-bottom: 1px;
 
         font-family: Roboto;
         font-size: 14px;
@@ -134,47 +138,50 @@ const StatsBox = styled.div`
 const TvlBox = styled.div`
     background: url(${TVLimage});
 
-    background-size: 100% 100%;
-    display: inline-block;
-    width: 480px;
+    background-size: 490px 290px;
 
     border-radius: 15px;
     padding: 50px;
 
-    margin-left: 5%;
-    margin-top: -20px;
+    margin-top: -300px;
+    margin-left: 50%;
+    
+    height: 195px;
+    width: 425px;
+
+    color: white;
 `
+
 const WelcomeText = styled.div`
-text-align:center;
-color: white;
-margin-top: -285px;
+    text-align:center;
+    color: white;
+    margin-top: -285px;
 
-img {
-    margin-top: -27px;
-}
+    img {
+        margin-top: -27px; 
+    }
 
-h2 {
-    font-family: Montserrat;
-    font-style: normal;
-    font-weight: 900;
-    font-size: 28px;
-    line-height: 35px;
-    text-align: center;
-    text-transform: uppercase;
-    color: #FFFFFF;
-}
+    h2 {
+        font-family: Montserrat;
+        font-style: normal;
+        font-weight: 900;
+        font-size: 28px;
+        line-height: 35px;
+        text-align: center;
+        text-transform: uppercase;
+        color: #FFFFFF;
+    }
 
-h4 {
-    font-family: Roboto;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 16px;
-    line-height: 19px;
-    text-align: center;
-    color: #FFFFFF;
-
-    margin-top: 10px;
-}
+    h4 {
+        font-family: Roboto;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 16px;
+        line-height: 19px;
+        text-align: center;
+        color: #FFFFFF;
+        margin-top: 10px;
+    }
 `
 
 
@@ -187,10 +194,11 @@ export default function Home() {
                 <img src={TopTitle} alt="" />
                 <h4>The #1 AMM and yield farm on Binance Smart Chain.</h4>
             </WelcomeText>
+
             <Conatiner>
                 <FarmBox>
                     <h2>Farms and Staking</h2>
-                        <img src={FarmingIcon} alt='' />
+                        <img Style="margin-left: 410px; margin-top: -60px;" src={FarmingIcon} alt='' />
                     <p>Moon to harvest</p>
                     <h4>LOCKED</h4>
                     <p>~$0.00</p>
@@ -201,15 +209,17 @@ export default function Home() {
                     </UnlockButton>
                 </FarmBox>
                 <AnnouncementsBox>
-                    <h2> Announcements</h2>
-                        <img src={AnnouncementsIcon} alt='' />
+                    <h2 Style="padding-top: 30px; 
+                                padding-left: 30px; 
+                                padding-bottom: 10px;"> Announcements</h2>
+                        <img  Style="margin-left: 400px; margin-top: -100px;" src={AnnouncementsIcon} alt='' />
                     <img src={TwitterPic} alt="" />
                 </AnnouncementsBox>
                 <br />
                 <StatsBox>
-                    <h2>Freemoon Stats</h2>
-                        <img src={StatsIcon} alt="" />
-                    <ul Style="float: left;">
+                    <h2 Style="margin-left: 36px;">Freemoon Stats</h2>
+                        <img  Style="margin-left: 410px; margin-top: -60px;" src={StatsIcon} alt="" />
+                    <ul Style="margin-top: -10px;"> 
                         <li>Market Cap</li>
                         <li>Total Minted</li>
                         <li>Total Burned</li>
@@ -217,7 +227,7 @@ export default function Home() {
                         <li>New Cancer/block</li>
                     </ul>
 
-                    <ul Style="margin-top: 35px;">
+                    <ul Style="margin-top: -180px; margin-left: 230px;">
                         <li>$19,339</li>
                         <li>645</li>
                         <li>41</li>
